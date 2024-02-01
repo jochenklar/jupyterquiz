@@ -63,9 +63,9 @@ function check_mc() {
         if (label.dataset.correct == "true") {
             // console.log("Correct action");
             if ("feedback" in label.dataset) {
-                fb.textContent = jaxify(label.dataset.feedback);
+                fb.innerHTML = jaxify(label.dataset.feedback);
             } else {
-                fb.textContent = "Correct!";
+                fb.innerHTML = "Correct!";
             }
             label.classList.add("correctButton");
 
@@ -74,9 +74,9 @@ function check_mc() {
 
         } else {
             if ("feedback" in label.dataset) {
-                fb.textContent = jaxify(label.dataset.feedback);
+                fb.innerHTML = jaxify(label.dataset.feedback);
             } else {
-                fb.textContent = "Incorrect -- try again.";
+                fb.innerHTML = "Incorrect -- try again.";
             }
             //console.log("Error action");
             label.classList.add("incorrectButton");
@@ -173,9 +173,9 @@ function check_mc() {
         var numcorrect = fb.dataset.numcorrect;
         var answeredcorrect = fb.dataset.answeredcorrect;
         if (answeredcorrect >= 0) {
-            fb.textContent = feedback + " [" + answeredcorrect + "/" + numcorrect + "]";
+            fb.innerHTML = feedback + " [" + answeredcorrect + "/" + numcorrect + "]";
         } else {
-            fb.textContent = feedback + " [" + 0 + "/" + numcorrect + "]";
+            fb.innerHTML = feedback + " [" + 0 + "/" + numcorrect + "]";
         }
 
 
